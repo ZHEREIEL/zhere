@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFLSTORE</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+    <script>
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+          section.classList.add("hidden");
+        });
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.classList.remove("hidden");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("transaksiForm");
+        const transaksiList = document.getElementById("transaksiList");
+
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+
+          const ID = document.getElementById("ID").value;
+          const SERVER = document.getElementById("SERVER").value;
+          const noWA = document.getElementById("NoWA").value;
+          const jenisPembelian =
+            document.getElementById("JenisPembelian").value;
+          const beliMenggunakan =
+            document.getElementById("BeliMenggunakan").value;
+          const jumlah = document.getElementById("jumlah").value;
+
+          const transaksiItem = document.createElement("div");
+          transaksiItem.classList.add("transaksi-item");
+          transaksiItem.innerHTML = `
+                    <p><strong>ID:</strong> ${ID}</p>
+                    <p><strong>SERVER:</strong> ${SERVER}</p>
+                    <p><strong>No.WA:</strong> ${noWA}</p>
+                    <p><strong>Jenis Pembelian:</strong> ${jenisPembelian}</p>
+                    <p><strong>BELI MENGGUNAKAN:</strong> ${beliMenggunakan}</p>
+                    <p><strong>Jumlah:</strong> ${jumlah}</p>
+                `;
+
+          transaksiList.appendChild(transaksiItem);
+
+          form.reset();
+          showSection("Transaksi");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="title">NFLSTORE</a>
+      <input
+        type="search"
+        class="input-search"
+        placeholder="Cari Sesuatu Disini......"
+      />
+      <button type="submit" class="input-submit">CARI</button>
+      <div class="menu">
+        <a onclick="showSection('home')">Beranda</a>
+        <a onclick="showSection('Beli')">Beli</a>
+        <a onclick="showSection('Transaksi')">Struk</a>
+        <a onclick="showSection('KontakProfile')">Kontak Profile</a>
+      </div>
+    </header>
+
+    <section id="home" class="slider">
+      <div class="slides">
+        <a
+          href="http://instagram.com/zharorarion"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="slide s1"
+        >
+          <img src="images/slide-1.jpg" alt="" />
+        </a>
+        <a
+          href="http://instagram.com/zharorarion"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="slide s1"
+        >
+          <img src="images/slide-2.jpg" alt="" />
+        </a>
+      </div>
+    </section>
+
+    <h1 class="title-p">POPULER</h1>
+    <section id="populer" class="populer">
+      <div class="ff">
+        <div class="link">
+          <a href="#harga-ff">
+            <img src="./images/ff.png" alt="" />
+            <div class="judul-produk">Free Fire</div>
+          </a>
+        </div>
+        <div class="overlay" id="harga-ff">
+          <div class="popup">
+            <h2>HARGA FREE FIRE</h2>
+            <a class="close" href="#populer">&times;</a>
+            <br />
+            <div class="content">
+              70 Diamonds :
+              <br />
+              <span class="harga">Rp 10.000</span>
+              <br />
+              140 Diamonds :
+              <br />
+              <span class="harga">Rp 20.000</span>
+              <br />
+              210 Diamonds :
+              <br />
+              <span class="harga">Rp 30.000</span>
+              <br />
+              <a
+                class="pesan"
+                href="https://wa.me/62895393822501"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./images/whatsapp.png" alt="" />Pesan Sekarang</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mlbb">
+        <div class="link">
+          <a href="#harga-mlbb">
+            <img src="./images/mlbb.jpg" alt="" />
+            <div class="judul-produk">Mobile Legends</div>
+          </a>
+        </div>
+        <div class="overlay" id="harga-mlbb">
+          <div class="popup">
+            <h2>HARGA MOBILE LEGENDS</h2>
+            <a class="close" href="#populer">&times;</a>
+            <br />
+            <div class="content">
+              70 Diamonds :
+              <br />
+              <span class="harga">Rp 19.000</span>
+              <br />
+              140 Diamonds :
+              <br />
+              <span class="harga">Rp 38.000</span>
+              <br />
+              210 Diamonds :
+              <br />
+              <span class="harga">Rp 55.000</span>
+              <br />
+              <a
+                class="pesan"
+                href="https://wa.me/62895393822501"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./images/whatsapp.png" alt="" />Pesan Sekarang</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="valo">
+        <div class="link">
+          <a href="#harga-valo">
+            <img src="./images/valorant.jpg" alt="" />
+            <div class="judul-produk">Valorant</div>
+          </a>
+        </div>
+        <div class="overlay" id="harga-valo">
+          <div class="popup">
+            <h2>HARGA VALORANT</h2>
+            <a class="close" href="#populer">&times;</a>
+            <br />
+            <div class="content">
+              357 VP :
+              <br />
+              <span class="harga">Rp 45.000</span>
+              <br />
+              650 VP :
+              <br />
+              <span class="harga">Rp 75.000</span>
+              <br />
+              1350 VP:
+              <br />
+              <span class="harga">Rp 150.000</span>
+              <br />
+              <a
+                class="pesan"
+                href="https://wa.me/62895393822501"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./images/whatsapp.png" alt="" />Pesan Sekarang</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pubgm">
+        <div class="link">
+          <a href="#harga-pubgm">
+            <img src="./images/pubgm.jpg" alt="" />
+            <div class="judul-produk">Pubgm</div>
+          </a>
+        </div>
+        <div class="overlay" id="harga-pubgm">
+          <div class="popup">
+            <h2>HARGA PUBGM</h2>
+            <a class="close" href="#populer">&times;</a>
+            <br />
+            <div class="content">
+              30 UC INDO:
+              <br />
+              <span class="harga">Rp 6.500</span>
+              <br />
+              60 UC INDO :
+              <br />
+              <span class="harga">Rp 13.000</span>
+              <br />
+              120 UC INDO :
+              <br />
+              <span class="harga">Rp 26.000</span>
+              <br />
+              <a
+                class="pesan"
+                href="https://wa.me/62895393822501"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./images/whatsapp.png" alt="" />Pesan Sekarang</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Beli" class="content hidden">
+      <h2>Input Pembelian</h2>
+      <form id="transaksiForm">
+        <label for="ID">ID:</label><br />
+        <input
+          type="text"
+          id="ID"
+          name="ID"
+          class="input-long"
+          required
+        /><br /><br />
+        <label for="SERVER">SERVER:</label><br />
+        <input
+          type="text"
+          id="SERVER"
+          name="SERVER"
+          class="input-long"
+          required
+        /><br /><br />
+        <label for="NoWA">No.WA</label>
+        <input
+          type="text"
+          id="NoWA"
+          name="NoWA"
+          class="input-long"
+          required
+        /><br /><br />
+        <label for="JenisPembelian">Jenis Pembelian:</label><br />
+        <select
+          id="JenisPembelian"
+          name="JenisPembelian"
+          class="input-long"
+          required
+        >
+          <option value="70 diamond mlbb ">70 diamond mlbb - Rp 19.000</option>
+          <option value="140 diamond mlbb">140 diamond mlbb - Rp 38.000</option>
+          <option value="210 diamond mlbb">210 diamond mlbb - Rp 55.000</option>
+          <option value="357 VP">357 VP - Rp 45.000</option>
+          <option value="650 VP ">650 VP - Rp 75.000</option>
+          <option value="1350 VP ">1350 VP- Rp 150.000</option>
+          <option value="30 UC INDO ">30 UC INDO - Rp 6.500</option>
+          <option value="60 UC INDO ">60 UC INDO - Rp 13.000</option>
+          <option value="120 UC INDO ">120 UC INDO - Rp 26.000</option></select
+        ><br /><br />
+        <label for="BeliMenggunakan">BELI MENGGUNAKAN:</label><br />
+        <select
+          id="BeliMenggunakan"
+          name="BeliMenggunakan"
+          class="input-long"
+          required
+        >
+          <option value="DANA">DANA</option>
+          <option value="OVO">OVO</option>
+          <option value="GOPAY">GOPAY</option>
+          <option value="SHOPEEPAY">SHOPEEPAY</option></select
+        ><br /><br />
+        <label for="jumlah">Jumlah:</label><br />
+        <input
+          type="number"
+          id="jumlah"
+          name="jumlah"
+          class="input-long"
+          required
+        /><br /><br />
+        <input type="submit" value="Submit" />
+      </form>
+    </section>
+
+    <section id="Transaksi" class="content hidden">
+      <h2>Transaksi Pembelian</h2>
+      <div id="transaksiList"></div>
+    </section>
+
+    <section id="KontakProfile" class="content hidden">
+      <h2>Kontak Profile</h2>
+      <div class="kontak-content">
+        <img
+          src="./images/NAUFAL.jpg"
+          alt="Foto Profil"
+          width="200px"
+          height="200px"
+        />
+        <div class="kontak-info">
+          <p><strong>CONTACT:</strong> 089-539-382-2501</p>
+          <p><strong>EMAIL:</strong> naufalazhar779@gmail.com</p>
+          <p><strong>Nama:</strong> NAUFAL AZHAR</p>
+          <p><strong>Kelas:</strong> IS-3</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tentang" id="tentang">
+      <div class="card">
+        <h1>TENTANG KAMI</h1>
+        <br />
+        <p>
+          <a href="" class="title">NFLSTORE</a> adalah website yang menyediakan
+          layanan digital
+          <br />
+          top up game mlbb, pubgm, valorant, dan free fire
+          <br />
+          Kami berdiri sejak tahun 2024 dan akan selalu berdiri
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="sosmed">
+        <h1>SOSIAL MEDIA</h1>
+        <a
+          href="https://instagram.com/zharorarion"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="./images/ig.png" alt="" />
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="./images/fb.png" alt="" />
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="./images/github.png" alt="" />
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <img src="./images/linkedin.png" alt="" />
+        </a>
+      </div>
+    </footer>
+    <div id="copyright">&copy;2024 NFLSTORE</div>
+  </body>
+</html>
